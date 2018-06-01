@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 15:35:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/30 15:37:31 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 10:32:00 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,4 @@ char	*ft_strcpy(char *dst, const char *src)
 	length = ft_strlen(src) + 1;
 	end = (char *)ft_memcpy(dst, src, length);
 	return (end);
+}

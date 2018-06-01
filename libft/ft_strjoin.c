@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 10:03:36 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/31 10:07:26 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 11:39:49 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t length;
-	char	combined;
+	size_t	length;
+	char	*combined;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -23,7 +23,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	combined = ft_strnew(length);
 	if (combined == NULL)
 		return (NULL);
-	ft_strcat(combined, s1);
-	ft_strcat(combined, s2);
+	ft_strcat(combined, (char *)s1);
+	ft_strcat(combined, (char *)s2);
 	return (combined);
 }

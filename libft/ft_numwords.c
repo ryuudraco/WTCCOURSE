@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:56:17 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/31 13:07:10 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 12:30:18 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ size_t	ft_numwords(char const *s, char b)
 		wordcount++;
 	while (s[i])
 	{
-		if((s[i] == b) && s[i + 1] != b && (s[i + 1] != 0))
+		if ((s[i] == b) && s[i + 1] != b && (s[i + 1] != 0))
+		{
 			wordcount++;
 			i++;
+		}
 	}
 	return (wordcount);
 }

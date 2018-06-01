@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 15:33:22 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/30 15:35:13 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 11:31:03 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	*ft_strclr(char *s)
 {
-	if (s != '\0')
-		ft_bzero(s, (sizeof(char) * ft_strlen(s)));
+	if (s)
+		ft_bzero(s, ft_strlen(s));
+	return ((void *)s);
 }

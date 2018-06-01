@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 10:11:34 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/31 10:17:42 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 10:19:24 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strmap(const char *s, char (*f)(char))
 {
 	char	*str;
 	size_t	i;
-	size_t length;
+	size_t	length;
 
 	i = 0;
 	if (!s)
