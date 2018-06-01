@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:37:19 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/31 16:40:23 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 12:10:20 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strstr(const char *big, const char *little)
 		return ((char *)big);
 	while (i < length)
 	{
-		if (ft_memcmp((big + i), little, ft_strlen(little)) = 0)
+		if (ft_memcmp((big + i), little, ft_strlen(little)) == 0)
 			return ((char *)(big + i));
 		i++;
 	}
