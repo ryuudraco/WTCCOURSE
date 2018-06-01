@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 10:07:38 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/01 11:40:19 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/01 18:33:55 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	unsigned int i;
 
 	i = 0;
-	while (s)
-		i++;
+	if (*s != '\0')
+	{
+		while (s && s[i])
+			i++;
+	}
 	return (i);
 }
