@@ -46,9 +46,7 @@ OBJ					= ft_atoi.o ft_bzero.o ft_countwords.o ft_isalnum.o ft_isalpha.o \
 					ft_toupper.o ft_wordlen.o ft_memrchr.o ft_min.o ft_lstnew.o \
 					ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o
 
-#Archon : "For Auir!"
-
-all:					$(NAME)
+all:				$(NAME)
 
 $(OBJ):			
 					$(CC) $(CFLAGS) -c $(SRC)

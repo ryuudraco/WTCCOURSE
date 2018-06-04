@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:22:48 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/03 11:39:29 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/04 10:22:32 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_list
 	void		*content;
 	size_t		content_size;
 	struct s_list	*next;
-}			t_list;
+}		t_list;
 
 int			ft_atoi(const char *str);
 void		ft_bzero(void *s, size_t n);
@@ -68,7 +68,7 @@ int			ft_strequ(char const *s1, char const *s2);
 void		ft_striter(char *s, void (*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strjoin(const char *s1, const char *s2);
-int			ft_strlcat(char *dest, char *src, unsigned int size);
+unsigned int			ft_strlcat(char *dest, char *src, unsigned int size);
 size_t		ft_strlen(const char *s);
 char		*ft_strmap(const char *s, char (*f)(char));
 char		*ft_strmapi(const char *s, char (*f)(unsigned int, char));
@@ -90,7 +90,7 @@ t_list			*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void		ft_lstadd(t_list **alst, t_list *node);
-void		ft_listiter(t_list *lst, void (*f)(t_list *elem));
-t_list			*ft_lstmap(t_list *lst, t_list (*f)(t_list *elem));
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
