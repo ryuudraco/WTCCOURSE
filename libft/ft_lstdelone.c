@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitter.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 13:07:19 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/01 11:11:47 by jheath           ###   ########.fr       */
+/*   Created: 2018/06/03 10:50:36 by jheath            #+#    #+#             */
+/*   Updated: 2018/06/03 10:54:28 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_splitter(char **array, const char *s, char c, size_t len)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t count;
-	size_t wordlen;
-	size_t i;
-
-	count = 0;
-	i = 0;
-	while (count < len)
+	if (alst && del)
 	{
-		wordlen = 0;
-		while (s[i] == c && s[i])
-			i++;
-		while (s[i] != c && s[i])
-		{
-			wordlen++;
-			i++;
-		}
-		if ((array[count] = ft_strsub(&s[i - wordlen], 0, wordlen)) == NULL)
-			return (0);
-		count++;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = NULL;
 	}
-	array[count] = 0;
-	return (1);
 }

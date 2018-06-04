@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:43:13 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/01 11:15:01 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/02 16:26:43 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strtrim(char const *s)
 	if (!s)
 		return (0);
 	i = 0;
+	while (IS_WHITESPACE(s[i]))
+		i++;
 	while (TRIM(s[i]))
 		i++;
 	length = ft_strlen(s) - 1;

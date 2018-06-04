@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numwords.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/31 12:56:17 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/01 12:30:18 by jheath           ###   ########.fr       */
+/*   Created: 2018/06/03 11:07:30 by jheath            #+#    #+#             */
+/*   Updated: 2018/06/03 11:28:17 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numwords(char const *s, char b)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t wordcount;
-	size_t i;
+	t_list *data;
+	t_list *next;
 
-	i = 0;
-	wordcount = 0;
-	if (s[i] && (s[i] != b) && (s[i + 1] != b) && (s[i + 1] != 0))
-		wordcount++;
-	while (s[i])
+	if (lst && f)
 	{
-		if ((s[i] == b) && s[i + 1] != b && (s[i + 1] != 0))
+		data = lst;
+		while (data->next)
 		{
-			wordcount++;
-			i++;
+			next = data->next;
+			f(data);
+			data = next;
 		}
+		f(data);
 	}
-	return (wordcount);
 }

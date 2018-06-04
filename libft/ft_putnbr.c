@@ -6,35 +6,32 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/22 09:09:51 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/25 14:14:16 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/02 13:36:13 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int val)
 {
-	int i;
+	long	n;
+	char	str[30];
+	int		sign;
+	int		i;
 
 	i = 0;
-	if (n > 2147483647 || n < -2147483647)
-		return ;
-	if (n == -2147483647)
+	n = (long)val;
+	if ((sign = n) < 0)
+		n *= -1;
+	str[i++] = (n % 10) + '0';
+	n /= 10;
+	while (n > 0)
 	{
-		ft_putstr("-2147483647");
-		return ;
+		str[i++] = (n % 10) + '0';
+		n /= 10;
 	}
-	if (n < 0)
-	{
-		n = n * -1;
-		ft_putchar('-');
-	}
-	if (n < 10)
-	{
-		ft_putchar(n + '0');
-		return ;
-	}
-	ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
-	return ;
+	if (sign < 0)
+		str[i++] = '-';
+	while (i-- > 0)
+		write(1, &str[i], 1);
 }

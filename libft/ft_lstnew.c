@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/24 13:38:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/02 14:39:53 by jheath           ###   ########.fr       */
+/*   Created: 2018/06/03 10:42:37 by jheath            #+#    #+#             */
+/*   Updated: 2018/06/03 10:49:33 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list	*ft_lstnew(void	const *content, size_t content_size)
 {
-	char	*s;
-	size_t	len;
+	t_list *node;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_nplacesarg(n) + 1;
-	if (!(s = (char *)malloc(sizeof(char) * len)))
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	if (n == 0)
-		s[0] = '0';
-	if (n < 0)
+	if (!content)
 	{
-		s[0] = '-';
-		n = -n;
+		node->content = (void *)content;
+		node->content_size = 0;
 	}
-	s[len - 1] = '\0';
-	while (n)
+	else
 	{
-		len--;
-		s[len - 1] = (n % 10) + '0';
-		n /= 10;
+		node->content = (void *)malloc(content_size);
+		if (!node->content)
+			return (NULL);
+		ft_memcpy(node->content, content, content_size);
+		node->content_size = content_size;
 	}
-	return (s);
+	node->next= NULL;
+	return (node);
 }

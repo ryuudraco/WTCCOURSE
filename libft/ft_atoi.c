@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 10:44:08 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/25 11:24:05 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/02 15:34:34 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int		ft_atoi(const char *str)
 	sign = 1;
 	if (str[i] == '\0')
 		return (0);
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+	while (IS_WHITESPACE(str[i]))
+		i++;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\r')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{

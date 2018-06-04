@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/24 13:38:20 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/02 14:39:53 by jheath           ###   ########.fr       */
+/*   Created: 2018/06/03 11:12:15 by jheath            #+#    #+#             */
+/*   Updated: 2018/06/03 11:19:25 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+t_list	*ft_lstmap(t_list *lst, t_list (*f)(t_list *elem))
 {
-	char	*s;
-	size_t	len;
+	t_list	*result;
+	t_list	*head;
+	t_list	*elem;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_nplacesarg(n) + 1;
-	if (!(s = (char *)malloc(sizeof(char) * len)))
+	if (!lst || !f)
 		return (NULL);
-	if (n == 0)
-		s[0] = '0';
-	if (n < 0)
+	elem = f(lst);
+	if (!(result = ft_lstnew(elem->content, elem->content_size)))
+		return (NULL);
+	lst = lst->next;
+	head = result;
+	while (lst)
 	{
-		s[0] = '-';
-		n = -n;
+		elem = f(lst);
+		if (!(result->next = t_lstnew(elem->content, elem->content_size))
+			return (NULL);
+		result = result->next;
+		lst = lst->next;
 	}
-	s[len - 1] = '\0';
-	while (n)
-	{
-		len--;
-		s[len - 1] = (n % 10) + '0';
-		n /= 10;
-	}
-	return (s);
+	return (head);
 }

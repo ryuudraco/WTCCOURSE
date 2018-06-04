@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 11:19:12 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/01 19:56:46 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/02 18:10:49 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t i;
-
-	if (src < dest)
+	if (src > dest)
 		ft_memcpy(dest, src, n);
 	else
 	{
-		i = 0;
-		while (i < n)
+		while (n != 0)
 		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i++;
+			((char *)dest)[n - 1] = ((char *)src)[n - 1];
+			n--;
 		}
 	}
 	return (dest);
