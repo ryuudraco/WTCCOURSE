@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 10:17:49 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/02 16:00:28 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/04 10:45:11 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char		*str;
-	char		*result;
+	char			*str;
+	char			*result;
 	unsigned int	i;
 
 	if (s && f)

@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:52:34 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/02 17:32:25 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/04 10:48:34 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static int	ft_numwords(char const *s, char b)
 
 static int	ft_splitter(char **arr, const char *s, char b, size_t len)
 {
-	size_t count;
-	size_t wordlen;
-	size_t i;
+	size_t	count;
+	size_t	wordlen;
+	size_t	i;
 
 	count = 0;
 	i = 0;
@@ -56,7 +56,7 @@ static int	ft_splitter(char **arr, const char *s, char b, size_t len)
 	return (1);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**array;
 	int		len;

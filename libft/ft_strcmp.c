@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 12:28:40 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/02 15:05:55 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/04 10:43:48 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_strcmp(char *s1, char *s2)
 {
 	unsigned char	*str1;
 	unsigned char	*str2;
-	int		i;
+	int				i;
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
