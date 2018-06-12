@@ -6,16 +6,16 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 12:41:08 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/25 14:34:58 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/09 17:42:04 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	unsigned int	i;
-	int				size;
+	size_t			i;
+	size_t			size;
 
 	size = 0;
 	i = 0;

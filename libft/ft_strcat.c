@@ -6,13 +6,13 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 12:49:36 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/25 12:38:24 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/11 12:37:06 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int i;
 	int dest_size;

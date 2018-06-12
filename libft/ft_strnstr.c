@@ -6,10 +6,11 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:44:43 by jheath            #+#    #+#             */
-/*   Updated: 2018/05/31 12:50:56 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/08 14:34:17 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stdio.h"
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
