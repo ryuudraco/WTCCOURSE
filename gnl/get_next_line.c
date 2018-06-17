@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/06 10:58:44 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/12 11:35:15 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/15 22:22:56 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int		ft_malloc(char **s)
 	*s = NULL;
 	if (!(*s = ft_strnew(ft_strlen(temp) + BUFF_SIZE)))
 		return (0);
-	else
-		return (1);
+	ft_strcpy(*s, temp);
+	return (1);
 	
 }
 
@@ -34,24 +34,24 @@ int		ft_line(char **s, char **line, int n)
 
 	i = 0;
 	j = 0;
-	if (n != 0 || ft_strlen(*s) != 0)
+	if (n != 0 || ft_strlen((*s)) != 0)
 	{
-		while(*s[i] != '\n')
+		while((*s)[i] != '\n')
 		{
-			*line[i] = *s[i];
+			(*line)[i] = (*s)[i];
 			i++;
 		}
-		*line[i++] = '\0';
-		if (*s[0] == '\n')
+		(*line)[i++] = '\0';
+		if ((*s)[0] == '\n')
 		{
-			while (*s[i])
-				*s[j++] = *s[i++];
-			*s[j] = '\0';
+			while ((*s)[i])
+				(*s)[j++] = (*s)[i++];
+			(*s)[j] = '\0';
 			return (-1);
 		}
-		while (*s[i])
-			*s[j++] = *s[i++];
-		*s[j] = '\0';
+		while ((*s)[i])
+			(*s)[j++] = (*s)[i++];
+		(*s)[j] = '\0';
 	}
 	return (1);
 }
