@@ -6,7 +6,7 @@
 /*   By: jheath <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 10:22:39 by jheath            #+#    #+#             */
-/*   Updated: 2018/06/12 11:39:17 by jheath           ###   ########.fr       */
+/*   Updated: 2018/06/18 13:23:51 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 int	main()
 {
+	int ret;
 	int	fd;
 	char	*line;
 	
 	fd = open("asd.txt", O_RDONLY);
-	while(get_next_line(fd, &line))
+	while((ret = get_next_line(fd, &line)) > 0)
 	{
-		printf("%s\n", line);
+		printf("%d %s\n", ret, line);
 	}
 	close(fd);
 	return (0);
