@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:22:58 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:07:22 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/13 12:46:33 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check(char c)
 
 t_flg	*get_options(char *s[], t_flg *option)
 {
-	int 	i;
+	int		i;
 
 	while (*++s)
 	{
@@ -36,7 +36,7 @@ t_flg	*get_options(char *s[], t_flg *option)
 				option->a = (**s == 'a' ? 1 : option->a);
 				option->r = (**s == 'r' ? 1 : option->r);
 				option->t = (**s == 't' ? 1 : option->t);
-				option->g = (**s == 'g' ? 1 : option->g); 
+				option->g = (**s == 'g' ? 1 : option->g);
 			}
 			else
 			{

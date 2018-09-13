@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:19:30 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 16:54:14 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/12 17:25:45 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,13 @@ static int			ft_manager(t_char *ract, uintmax_t n)
 		(ract->flg)[0] = '0';
 	ract->slen = ft_hexl(ract, n);
 	if (ract->flg[0] == '0' && ract->flg[1] == '#' && n != 0)
-		len += (ract->spec == 'X') ? ft_printfputstr("0X", -1) : ft_printfputstr("0x", -1);
+		len += (ract->spec == 'X') ? ft_printfputstr("0X", -1) : \
+		ft_printfputstr("0x", -1);
 	while ((ract->flg[3] != '-' && ract->width > (ract->slen)))
 		(len += ft_printfputchar((ract->flg)[0])) && ract->width--;
 	if ((ract->flg)[0] == ' ' && ract->flg[1] == '#' && n != 0)
-		len += (ract->spec == 'X') ? ft_printfputstr("0X", -1) : ft_printfputstr("0x", -1);
+		len += (ract->spec == 'X') ? ft_printfputstr("0X", -1) : \
+		ft_printfputstr("0x", -1);
 	while (ract->pcsn != -1 && ract->pcsn > 0)
 		(len += ft_printfputchar('0')) && ract->pcsn--;
 	len += (ract->spec == 'X') ? ft_printhex(n, ract, "0123456789ABCDEF") : \

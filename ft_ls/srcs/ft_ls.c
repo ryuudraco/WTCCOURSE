@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 11:59:53 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:09:59 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/12 17:34:29 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ls_pfile(t_dir *elem, t_flg option)
 
 void	ls_pdir(t_dir *elem, t_flg option, int mdir)
 {
-	DIR 		*dir;
+	DIR			*dir;
 	t_dir		*data;
 	int			nl;
 

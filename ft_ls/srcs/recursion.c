@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:34:35 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:09:44 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/12 17:36:52 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	next_dir(t_flg option, char *file)
 {
-	DIR 	*dir;
+	DIR		*dir;
 	t_dir	*elem;
 
 	elem = NULL;
@@ -35,7 +35,7 @@ void	next_dir(t_flg option, char *file)
 
 void	recursive(t_dir *elem, t_flg option)
 {
-	t_dir 	*cd;
+	t_dir	*cd;
 
 	cd = elem;
 	while (cd)

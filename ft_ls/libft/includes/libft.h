@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:22:48 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 16:53:03 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/12 17:35:51 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct		s_list
 
 void				ft_bzero(void *s, size_t n);
 int					ft_digit(int c);
-int 				ft_isuma(char **s);
+int					ft_isuma(char **s);
 char				*ft_itoa(int n);
 t_list				*ft_lstnew(void	*data);
 void				ft_lstpush(t_list **lst, void *data);
@@ -73,9 +73,9 @@ char				*ft_utoa(unsigned int n);
 # define FLAGS			"#0-+ "
 # define CFLAGS			"hljz"
 
-typedef struct 			s_char
+typedef struct		s_char
 {
-	char 	*flg;
+	char	*flg;
 	short	width;
 	short	pcsn;
 	int		h;
@@ -84,20 +84,20 @@ typedef struct 			s_char
 	int		ll;
 	int		z;
 	int		j;
-	char 	spec;
+	char	spec;
 	short	slen;
-}						t_char;
+}					t_char;
 
-int 					ft_char(t_char *ract, void *c);
-int 					ft_find_spec(t_char *ract, va_list arg);
-int 					ft_format(char **form, va_list arg);
-int 					ft_hex(t_char *ract, void *n);
-int 					ft_liter(t_char *ract, char c);
-int 					ft_nbr(t_char *ract, void *n);
-int 					ft_oct(t_char *ract, void *n);
-int 					ft_point(t_char *ract, void *n);
-int 					ft_printf(const char *format, ...);
-int 					ft_str(t_char *ract, void *s);
-int 					ft_ub(t_char *ract, void *n);
+int					ft_char(t_char *ract, void *c);
+int					ft_find_spec(t_char *ract, va_list arg);
+int					ft_format(char **form, va_list arg);
+int					ft_hex(t_char *ract, void *n);
+int					ft_liter(t_char *ract, char c);
+int					ft_nbr(t_char *ract, void *n);
+int					ft_oct(t_char *ract, void *n);
+int					ft_point(t_char *ract, void *n);
+int					ft_printf(const char *format, ...);
+int					ft_str(t_char *ract, void *s);
+int					ft_ub(t_char *ract, void *n);
 
 #endif
