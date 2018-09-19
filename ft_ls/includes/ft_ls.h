@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 12:03:22 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:47:36 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:52:07 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,12 @@ void			recursive(t_dir *elem, t_flg option);
 t_dir			*sort_lst(t_dir *elem, t_flg option);
 void			swap(t_dir *l1, t_dir *l2);
 int				elemd(struct dirent *dirp, t_dir **elem, char *p);
-void			elemf(t_dir **elem, char *file, char *p);
+t_dir			*elemf(t_dir *elem, char *file, char *p);
 void			ls_std(t_dir *elem, t_flg option);
 void			ls_long(t_dir *elem, t_flg option);
 void			dir_error(char *file);
 void			cdr_error(char *file);
+void			free_files(t_dir *head);
+void			free_list(t_list *head);
 
 #endif

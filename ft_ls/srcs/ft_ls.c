@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 11:59:53 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:34:29 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:51:53 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,13 @@ void	ls_dir(t_list *p, t_flg option, int mdir)
 	elem = NULL;
 	while (cd)
 	{
-		elemf(&elem, cd->data, "");
+		elem = elemf(elem, cd->data, "");
 		cd = cd->next;
 	}
 	elem = sort_lst(elem, option);
 	ls_pdir(elem, option, mdir);
+	free_list(p);
+	free_files(elem);
 }
 
 void	ls_file(t_list *p, t_flg option)
@@ -73,11 +75,13 @@ void	ls_file(t_list *p, t_flg option)
 	elem = NULL;
 	while (cd)
 	{
-		elemf(&elem, cd->data, "");
+		elem = elemf(elem, cd->data, "");
 		cd = cd->next;
 	}
 	if (elem)
 		ls_pfile(elem, option);
+	free_files(elem);
+	free_list(p);
 }
 
 void	ls_path(t_list *p, t_flg option, int mdir)
@@ -98,12 +102,12 @@ void	ls_path(t_list *p, t_flg option, int mdir)
 		else
 		{
 			ft_lstpush(&d, cd->data);
-			if (closedir(dir) == -1)
-				cdr_error(cd->data);
+			(closedir(dir) == -1) ? cdr_error(cd->data) : NULL;
 		}
 		cd = cd->next;
 	}
 	f ? ls_file(f, option) : NULL;
 	f && d ? ft_putchar('\n') : NULL;
 	d ? ls_dir(d, option, mdir) : NULL;
+	free_list(p);
 }

@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:18:42 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:34:03 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:51:53 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*permissions(struct stat s, t_dir *elem)
 {
 	mode_t		p;
 
-	elem->pms = malloc(sizeof(char) * (10 + 1));
+	elem->pms = (char*)malloc(sizeof(char) * (10 + 1));
 	p = s.st_mode;
 	elem->pms[0] = (S_ISBLK(p)) ? 'b' : elem->pms[0];
 	elem->pms[0] = (S_ISCHR(p)) ? 'c' : elem->pms[0];
@@ -60,22 +60,12 @@ char	*gid(struct stat s)
 
 char	*get_time(struct stat s)
 {
-	int			i;
-	char		*ti;
-	char		*tp;
-	char		*ty;
+	char		*r;
+	char		*tm;
 	time_t		t;
 
-	i = 0;
 	t = time(NULL);
-	tp = ctime(&s.st_mtime);
-	ti = tp;
-	ty = ft_strsub(ti, 19, 5);
-	tp = tp + 4;
-	tp[12] = '\0';
-	ti = ft_strsub(tp, 4, 3);
-	ti = ft_strcat(ti, ft_strsub(tp, 0, 4));
-	tp = (((t - s.st_mtime) <= 15724800) ? (tp + 7) : (ty));
-	ti = ft_strcat(ti, tp);
-	return (ti);
+	tm = ctime(&s.st_mtime);
+	r = ft_strsub(tm, 4, 12);
+	return (r);
 }

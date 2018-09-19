@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/11 16:45:09 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/19 12:52:01 by jheath           ###   ########.fr       */
+/*   Created: 2018/05/28 12:06:46 by rde-kwaa          #+#    #+#             */
+/*   Updated: 2018/09/19 12:52:28 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	swap_nodes(t_dir *l1, t_dir *l2)
+void	ft_memdel(void **ap)
 {
-	l1->file = l2->file;
-	l1->pms = l2->pms;
-	l1->hlnk = l2->hlnk;
-	l1->uid = l2->uid;
-	l1->gid = l2->gid;
-	l1->size = l2->size;
-	l1->date = l2->date;
-	l1->mdate = l2->mdate;
-	l1->blcks = l2->blcks;
-	l1->dpath = l2->dpath;
+	if (ap != NULL && *ap != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }
-
-void	swap(t_dir *l1, t_dir *l2)
-{
-	t_dir temp;
-
-	temp = *l1;
-	swap_nodes(l1, l2);
-	swap_nodes(l2, &temp);
-}
-

@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:05:42 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:33:36 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:51:49 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_dir		*ft_new(char *file, char *p)
 	t_dir		*elem;
 
 	elem = malloc(sizeof(t_dir));
-	elem->file = ft_strdup(file);
+	elem->file = file;
 	elem->dpath = ft_strjoin(p, file);
 	if (stat(elem->dpath, &s) == -1)
 		ft_putstr("Stat Error\n");
@@ -34,11 +34,11 @@ t_dir		*ft_new(char *file, char *p)
 	return (elem);
 }
 
-void		elemf(t_dir **elem, char *file, char *p)
+t_dir		*elemf(t_dir *elem, char *file, char *p)
 {
 	t_dir		*list;
 
-	list = *elem;
+	list = elem;
 	if (list)
 	{
 		while (list->next)
@@ -46,7 +46,8 @@ void		elemf(t_dir **elem, char *file, char *p)
 		list->next = ft_new(file, p);
 	}
 	else
-		*elem = ft_new(file, p);
+		elem = ft_new(file, p);
+	return (elem);
 }
 
 int			elemd(struct dirent *dirp, t_dir **elem, char *p)
@@ -54,7 +55,7 @@ int			elemd(struct dirent *dirp, t_dir **elem, char *p)
 	t_dir		*list;
 
 	list = *elem;
-	if (!dirp)
+	if (dirp == NULL)
 		return (0);
 	if (list)
 	{
@@ -64,5 +65,6 @@ int			elemd(struct dirent *dirp, t_dir **elem, char *p)
 	}
 	else
 		*elem = ft_new(dirp->d_name, p);
+	ft_strdel(&p);
 	return (1);
 }

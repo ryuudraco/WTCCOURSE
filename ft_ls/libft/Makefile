@@ -6,7 +6,7 @@
 #    By: jheath <jheath@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/13 12:49:11 by jheath            #+#    #+#              #
-#    Updated: 2018/09/11 15:57:48 by jheath           ###   ########.fr        #
+#    Updated: 2018/09/19 12:52:53 by jheath           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT =		ft_bzero.c ft_char.c ft_digit.c ft_find_spec.c ft_format.c \
 			ft_printfputstr.c ft_putchar.c ft_putendl.c ft_putstr.c ft_putwstr.c \
 			ft_str.c  ft_strcat.c ft_strchr.c ft_strcmp.c ft_strcpy.c \
 			ft_strdel.c ft_strdup.c ft_strjoin.c ft_strlen.c ft_strlenpcsn.c \
-			ft_strncpy.c ft_strnew.c ft_strsub.c ft_ub.c ft_utoa.c
+			ft_strncpy.c ft_strnew.c ft_strsub.c ft_ub.c ft_utoa.c ft_memdel.c
 
 # Objects
 OBJ =       $(LIBFT:.c=.o)

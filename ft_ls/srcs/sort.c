@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:39:27 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:39:27 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:51:59 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int		lexographical(t_dir *l1, t_dir *l2)
 	return (ft_strcmp(l1->file, l2->file));
 }
 
-void	sort(t_dir **elem, int (*cmp)(t_dir *l1, t_dir *l2))
+t_dir	*sort(t_dir *elem, int (*cmp)(t_dir *l1, t_dir *l2))
 {
 	t_dir	*l1;
 	t_dir	*l2;
 
-	l1 = *elem;
+	l1 = elem;
 	while (l1)
 	{
 		l2 = l1->next;
@@ -41,15 +41,16 @@ void	sort(t_dir **elem, int (*cmp)(t_dir *l1, t_dir *l2))
 		}
 		l1 = l1->next;
 	}
+	return (elem);
 }
 
-void	reverse_sort(t_dir **elem)
+t_dir	*reverse_sort(t_dir *elem)
 {
 	t_dir	*a;
 	t_dir	*b;
 	t_dir	*c;
 
-	a = *elem;
+	a = elem;
 	b = NULL;
 	c = NULL;
 	while (a)
@@ -59,7 +60,8 @@ void	reverse_sort(t_dir **elem)
 		a = a->next;
 		b->next = c;
 	}
-	*elem = b;
+	elem = b;
+	return (elem);
 }
 
 t_dir	*sort_lst(t_dir *elem, t_flg option)
@@ -69,8 +71,8 @@ t_dir	*sort_lst(t_dir *elem, t_flg option)
 	if (!elem)
 		return (NULL);
 	r = elem;
-	sort(&r, lexographical);
-	(option.t == 1) ? sort(&r, stime) : NULL;
-	(option.r == 1) ? reverse_sort(&r) : NULL;
+	r = sort(r, lexographical);
+	(option.t == 1) ? r = sort(r, stime) : NULL;
+	(option.r == 1) ? r = reverse_sort(r) : NULL;
 	return (r);
 }

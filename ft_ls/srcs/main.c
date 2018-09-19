@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:22:58 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/13 12:46:33 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:51:55 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ t_flg	*get_options(char *s[], t_flg *option)
 				option->g = (**s == 'g' ? 1 : option->g);
 			}
 			else
-			{
 				check(*s[i]);
-			}
 		}
 	}
 	return (option);
@@ -76,3 +74,5 @@ int		main(int argc, char **argv)
 	ls_path(p, option, p->next != NULL ? 1 : 0);
 	return (0);
 }
+//Using this command line
+//valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./ft_ls -l

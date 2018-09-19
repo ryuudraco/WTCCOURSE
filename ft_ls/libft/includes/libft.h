@@ -6,7 +6,7 @@
 /*   By: jheath <jheath@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 17:22:48 by jheath            #+#    #+#             */
-/*   Updated: 2018/09/12 17:35:51 by jheath           ###   ########.fr       */
+/*   Updated: 2018/09/19 12:52:05 by jheath           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char				*ft_itoa(int n);
 t_list				*ft_lstnew(void	*data);
 void				ft_lstpush(t_list **lst, void *data);
 void				*ft_memalloc(size_t size);
+void				ft_memdel(void **ap);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 int					ft_nplacesarg(int num);
